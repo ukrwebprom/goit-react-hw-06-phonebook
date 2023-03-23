@@ -1,0 +1,18 @@
+.form {
+  padding: 10px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form-input {
+  font-size: 18px;
+  padding: 7px;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}/*# sourceMappingURL=contact-form.css.map */
