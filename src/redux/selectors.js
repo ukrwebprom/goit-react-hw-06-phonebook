@@ -1,0 +1,1 @@
+export const getContacts = state => state.contacts.filter(item => item.name.toLowerCase().includes(state.filter.toLowerCase()));

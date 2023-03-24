@@ -1,26 +1,21 @@
 import { Contact } from './Contact';
-import PropTypes from "prop-types";
+import { getContacts } from 'redux/selectors';
+import { useSelector } from 'react-redux';
 
-
-const ContactList = ({ data, removeCallback }) => {
-
+const ContactList = () => {
+  const contacts = useSelector(getContacts);
   return (
-    <ul style={{margin:0, padding:0, listStyle:'none'}}> 
-      {data.map(item =>
-      <Contact key={item.id} id={item.id} name={item.name} number={item.number} remove={removeCallback}/>)}
+    <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+      {contacts.map(item => (
+        <Contact
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          number={item.number}
+        />
+      ))}
     </ul>
-  ) 
+  );
 };
-
-ContactList.propTypes = {
-  data:PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired, 
-      name: PropTypes.string.isRequired, 
-      number: PropTypes.string.isRequired
-    })
-  ),
-  removeCallback: PropTypes.func.isRequired
-}
 
 export default ContactList;
